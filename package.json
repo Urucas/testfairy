@@ -1,0 +1,24 @@
+{
+  "name": "testfairy",
+  "version": "0.0.1",
+  "description": "testfairy upload cli-tool",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Urucas/testfairy.git"
+  },
+  "keywords": [
+    "testfairy",
+    "android",
+    "ios"
+  ],
+  "author": "Urucas <hello@urucas.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Urucas/testfairy/issues"
+  },
+  "homepage": "https://github.com/Urucas/testfairy#readme"
+}
