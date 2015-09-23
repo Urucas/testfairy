@@ -6,7 +6,7 @@
   "scripts": {
     "build" : "grunt build",
     "prestart" : "npm run build", 
-    "start" : "./cli.js",
+    "start" : "./cli",
     "test": "./node_modules/mocha/bin/mocha tests/*"
   },
   "repository": {
