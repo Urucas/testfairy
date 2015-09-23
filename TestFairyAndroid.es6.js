@@ -14,7 +14,7 @@ export default class TestFairyAndroid extends TestFairy {
   validate_min_params() {
     let logger = this.logger;
     if(this.verbose)
-      logger.echo("Checkin minimal params are setted")
+      logger.log("Checkin minimal params are setted")
     
     if(this.api_key == undefined)
       return new Error("Undefined api_key param");
@@ -41,7 +41,7 @@ export default class TestFairyAndroid extends TestFairy {
   upload() {
     let logger = this.logger;
     if(this.verbose) 
-      logger.echo("Uploading apk to TestFairy");
+      logger.log("Uploading apk to TestFairy");
       
     let params = [
       '-s', this.server_endpoint+"/api/upload",

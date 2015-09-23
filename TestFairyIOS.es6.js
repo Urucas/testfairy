@@ -7,14 +7,14 @@ export default class TestFairyIOS extends TestFairy {
   
   constructor(params) {
     super(params)
-    this.apk_file = params.apk_file;
+    this.ios_file = params.ios_file;
     this.is_android = true;
   }
 
   validate_min_params() {
     let logger = this.logger;
     if(this.verbose)
-      logger.echo("Checkin minimal params are setted")
+      logger.log("Checkin minimal params are setted")
     
     if(this.api_key == undefined)
       return new Error("Undefined api_key param");
@@ -41,7 +41,7 @@ export default class TestFairyIOS extends TestFairy {
   upload() {
     let logger = this.logger;
     if(this.verbose) 
-      logger.echo("Uploading apk to TestFairy");
+      logger.log("Uploading ipa to TestFairy");
       
     let params = [
       '-s', this.server_endpoint+"/api/upload",
@@ -52,7 +52,10 @@ export default class TestFairyIOS extends TestFairy {
     let response = child.stdout.toString();
     try {
       response = JSON.parse(response);
-      return [null, response];
+      if(response.status == "ok")
+        return [null, response];
+      else 
+        return [new Error(response.message), response];
     }catch(e) {
       return [e];
     }
