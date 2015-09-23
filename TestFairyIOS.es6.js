@@ -23,10 +23,10 @@ export default class TestFairyIOS extends TestFairy {
       logger.ok("Checking api_key key is not undefined");
 
     if(this.ios_file == undefined)
-      return new Error("Undefined ios_file param");
+      return new Error("Undefined file param");
     
     if(this.verbose)
-      logger.ok("Checking ios_file key is not undefined");
+      logger.ok("Checking file key is not undefined");
 
     this.ios_file = glue([process.cwd(), this.ios_file]);
     try {

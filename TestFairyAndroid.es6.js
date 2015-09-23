@@ -23,10 +23,10 @@ export default class TestFairyAndroid extends TestFairy {
       logger.ok("Checking api_key key is not undefined");
 
     if(this.apk_file == undefined)
-      return new Error("Undefined apk_file param");
+      return new Error("Undefined file param");
     
     if(this.verbose)
-      logger.ok("Checking api_key key is not undefined");
+      logger.ok("Checking file key is not undefined");
 
     this.apk_file = glue([process.cwd(), this.apk_file]);
     try {
