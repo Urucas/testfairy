@@ -4,9 +4,9 @@
   "description": "testfairy upload cli-tool",
   "main": "index.js",
   "scripts": {
-    "build" : "grunt build",
-    "prestart" : "npm run build", 
-    "start" : "./cli",
+    "build": "grunt build",
+    "prestart": "npm run build",
+    "start": "./cli",
     "test": "./node_modules/mocha/bin/mocha tests/*"
   },
   "repository": {
@@ -31,6 +31,9 @@
     "load-grunt-tasks": "^3.3.0"
   },
   "dependencies": {
-    "minimist": "^1.2.0"
+    "glue-path": "0.0.4",
+    "minimist": "^1.2.0",
+    "request": "^2.63.0",
+    "semafor": "0.0.1"
   }
 }
