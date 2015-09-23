@@ -9,8 +9,7 @@ export default class TestFairyUploader {
 
   run() {
     let err = this.uploader.validate_min_params();
-    if(err) return err
-    err = this.uploader.upload();
-    if(err) return err;
+    if(err) return [err]
+    return this.uploader.upload();
   }
 }

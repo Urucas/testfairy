@@ -15,7 +15,9 @@ if(argv.indexOf("--help") != -1) {
 var logger = require('semafor')();
 var params = require('minimist')(argv)
 var TestFairyUploader = require('./TestFairyUploader.js'),
-  uploader = new TestFairyUploader(params)
-var err = uploader.run();
-if(err) return logger.fail(err.message);
+uploader = new TestFairyUploader(params)
+var response = uploader.run();
+var err = response[0];
+if(err != null) return logger.fail(err.message);
 logger.ok("File successfully uploaded to TestFairy");
+console.log(response[1]);
