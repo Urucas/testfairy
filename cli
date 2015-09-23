@@ -1,0 +1,15 @@
+#!/usr/bin/env node
+var argv = process.argv.slice(2)
+if(argv.indexOf("--help") != -1) {
+  console.log([
+    "Usage; ",
+    " testfairy <android_or_ios> --api_key=<api_key> --apk_file=<relative_path_to_apk_file>",
+    " [--icon-watermark=on_or_off]",
+    " [--video=on_or_off]",
+    " [--max_duration=time_duration_m]",
+    " [--comment=comment]",
+    ].join("\n"))
+  process.exit(0)
+}
+var params = require('minimist')(argv)
+console.log(params);
