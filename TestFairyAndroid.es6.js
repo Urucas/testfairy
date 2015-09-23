@@ -7,7 +7,7 @@ export default class TestFairyAndroid extends TestFairy {
   
   constructor(params) {
     super(params)
-    this.apk_file = params.apk_file;
+    this.apk_file = params.file;
     this.is_android = true;
   }
 

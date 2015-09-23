@@ -7,8 +7,8 @@ export default class TestFairyIOS extends TestFairy {
   
   constructor(params) {
     super(params)
-    this.ios_file = params.ios_file;
-    this.is_android = true;
+    this.ios_file = params.file;
+    this.is_ios = true;
   }
 
   validate_min_params() {
@@ -48,6 +48,7 @@ export default class TestFairyIOS extends TestFairy {
       '-F', 'api_key='+this.api_key,
       '-F', 'file=@'+this.ios_file
     ];
+
     let child = child_process.spawnSync("curl", params);
     let response = child.stdout.toString();
     try {
