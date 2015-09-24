@@ -14,7 +14,7 @@ if(argv.indexOf("--help") != -1) {
 }
 var logger = require('semafor')();
 var params = require('minimist')(argv)
-var TestFairyUploader = require('./dest/TestFairyUploader.js'),
+var TestFairyUploader = require('./dist/TestFairyUploader.js'),
 uploader = new TestFairyUploader(params)
 var response = uploader.run();
 var err = response[0];
