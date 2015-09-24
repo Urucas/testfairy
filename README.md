@@ -8,7 +8,10 @@ npm install -g testfairy
 
 #Usage
 ```bash
-testfairy --platform=<android_or_ios> --api_key=<your_api_key> --file=<relative_path_to_your_apk_or_ipa>
+testfairy 
+  --platform=<android_or_ios> 
+  --api_key=<your_api_key> 
+  --file=<relative_path_to_your_apk_or_ipa>
 ```
 
 **API**
