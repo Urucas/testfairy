@@ -1,4 +1,4 @@
-import TestFairyUploader from '../TestFairyUploader.es6.js'
+import TestFairyUploader from '../TestFairyUploader.js'
 
 describe("Test TestFairyUploader", () => {
         
@@ -26,6 +26,16 @@ describe("Test TestFairyUploader", () => {
     let className = uploader.uploader.constructor.name;
     if(className != "TestFairyIOS")
       throw new Error("uploader class instance is not TestFairyIOS, className: "+className);
+    done();
+  })
+
+  it("should return an error on empty api_key param", (done) => {
+    let uploader = new TestFairyUploader({platform:"android"});
+    let [err, result] = uploader.run();
+    if(err == null)
+      throw new Error("run failed to return an error on empty api_key param");
+    if(err.message != "Undefined api_key param")
+      throw new Error("error message on empty params is not correct, message:"+err.message);
     done();
   })
 
