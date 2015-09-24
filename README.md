@@ -18,7 +18,7 @@ testfairy
 ```javascript
 import TestFairyUploader from 'TestFairyUploader.js'
 let uploader new TestFairyUploader({
-  apk_file:"relative_path_to_your_apk_or_ipa", 
+  file:"relative_path_to_your_apk_or_ipa", 
   platofrm:"android_or_ios", 
   api_key:"your_api_key"
 }
