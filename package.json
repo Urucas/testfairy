@@ -2,7 +2,7 @@
   "name": "testfairy",
   "version": "0.0.2",
   "description": "testfairy upload cli-tool",
-  "main": "./dest/TestFairyUplader.js",
+  "main": "./dist/TestFairyUplader.js",
   "scripts": {
     "build": "grunt build",
     "prestart": "npm run build",
