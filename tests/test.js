@@ -1,4 +1,4 @@
-import TestFairyUploader from '../TestFairyUploader.js'
+import TestFairyUploader from '../lib/TestFairyUploader.js'
 
 describe("Test TestFairyUploader", () => {
         
