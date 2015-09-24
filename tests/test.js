@@ -95,6 +95,450 @@ describe("Test TestFairyUploader", () => {
     done();
   })
 
+  // options tests
+  // notify param
+  it("should set the notify param to 'off' with android platform", (done) => {
+     // create tmp.apk
+    fs.closeSync(fs.openSync('./tests/dummy.apk','w+'))
+
+    let uploader = new TestFairyUploader({
+      platform:"android", 
+      api_key:"xxxxx", 
+      file: "./tests/dummy.apk",
+      notify: "off"
+    });
+    let uploaderClass = uploader.uploader;
+    if(uploaderClass.notify != "off") 
+      throw new Error("error setting notify, extected 'off' actual "+uploaderClass.notify);
+    let params = uploaderClass.get_common_params().join(" ");
+    if(params.indexOf('notify') == -1)
+      throw new Error("notify param not added to get_common_params");
+    
+    done();
+  })
+
+  it("should set the notify param to 'on' with android platform", (done) => {
+     // create tmp.apk
+    fs.closeSync(fs.openSync('./tests/dummy.apk','w+'))
+
+    let uploader = new TestFairyUploader({
+      platform:"android", 
+      api_key:"xxxxx", 
+      file: "./tests/dummy.apk",
+      notify: "on"
+    });
+    let uploaderClass = uploader.uploader;
+    if(uploaderClass.notify != "on") 
+      throw new Error("error setting notify, extected 'off' actual  "+uploaderClass.notify);
+    let params = uploaderClass.get_common_params().join(" ");
+    if(params.indexOf('notify') == -1)
+      throw new Error("notify param not added to get_common_params");
+
+    done();
+  })
+
+  it("should set the notify param to 'off' with ios platform", (done) => {
+     // create tmp.apk
+    fs.closeSync(fs.openSync('./tests/dummy.ipa','w+'))
+
+    let uploader = new TestFairyUploader({
+      platform:"android", 
+      api_key:"xxxxx", 
+      file: "./tests/dummy.ipa",
+      notify: "off"
+    });
+    let uploaderClass = uploader.uploader;
+    if(uploaderClass.notify != "off") 
+      throw new Error("error setting notify, extected 'off' actual "+uploaderClass.notify);
+    let params = uploaderClass.get_common_params().join(" ");
+    if(params.indexOf('notify') == -1)
+      throw new Error("notify param not added to get_common_params");
+
+    done();
+  })
+
+  it("should set the notify param to 'on' with ios platform", (done) => {
+     // create tmp.apk
+    fs.closeSync(fs.openSync('./tests/dummy.ipa','w+'))
+
+    let uploader = new TestFairyUploader({
+      platform:"android", 
+      api_key:"xxxxx", 
+      file: "./tests/dummy.ipa",
+      notify: "on"
+    });
+    let uploaderClass = uploader.uploader;
+    if(uploaderClass.notify != "on") 
+      throw new Error("error setting notify, extected 'off' actual  "+uploaderClass.notify);
+    let params = uploaderClass.get_common_params().join(" ");
+    if(params.indexOf('notify') == -1)
+      throw new Error("notify param not added to get_common_params");
+
+    done();
+  })
+
+  // auto_update param
+  it("should set the auto_update param to 'off' with android platform", (done) => {
+     // create tmp.apk
+    fs.closeSync(fs.openSync('./tests/dummy.apk','w+'))
+
+    let uploader = new TestFairyUploader({
+      platform:"android", 
+      api_key:"xxxxx", 
+      file: "./tests/dummy.apk",
+      auto_update: "off"
+    });
+    let uploaderClass = uploader.uploader;
+    if(uploaderClass.auto_update != "off") 
+      throw new Error("error setting notify, extected 'off' actual "+uploaderClass.auto_update);
+    let params = uploaderClass.get_common_params().join(" ");
+    if(params.indexOf('auto-update') == -1)
+      throw new Error("auto-update param not added to get_common_params");
+
+    done();
+  })
+
+  it("should set the auto_update param to 'on' with android platform", (done) => {
+     // create tmp.apk
+    fs.closeSync(fs.openSync('./tests/dummy.apk','w+'))
+
+    let uploader = new TestFairyUploader({
+      platform:"android", 
+      api_key:"xxxxx", 
+      file: "./tests/dummy.apk",
+      auto_update: "on"
+    });
+    let uploaderClass = uploader.uploader;
+    if(uploaderClass.auto_update != "on") 
+      throw new Error("error setting notify, extected 'off' actual  "+uploaderClass.auto_update);
+    let params = uploaderClass.get_common_params().join(" ");
+    if(params.indexOf('auto-update') == -1)
+      throw new Error("auto-update param not added to get_common_params");
+
+    done();
+  })
+  
+  it("should set the auto_update param to 'off' with ios platform", (done) => {
+     // create tmp.apk
+    fs.closeSync(fs.openSync('./tests/dummy.ipa','w+'))
+
+    let uploader = new TestFairyUploader({
+      platform:"android", 
+      api_key:"xxxxx", 
+      file: "./tests/dummy.ipa",
+      auto_update: "off"
+    });
+    let uploaderClass = uploader.uploader;
+    if(uploaderClass.auto_update != "off") 
+      throw new Error("error setting notify, extected 'off' actual "+uploaderClass.auto_update);
+    let params = uploaderClass.get_common_params().join(" ");
+    if(params.indexOf('auto-update') == -1)
+      throw new Error("auto-update param not added to get_common_params");
+
+    done();
+  })
+
+  it("should set the auto_update param to 'on' with ios platform", (done) => {
+     // create tmp.apk
+    fs.closeSync(fs.openSync('./tests/dummy.ipa','w+'))
+
+    let uploader = new TestFairyUploader({
+      platform:"android", 
+      api_key:"xxxxx", 
+      file: "./tests/dummy.ipa",
+      auto_update: "on"
+    });
+    let uploaderClass = uploader.uploader;
+    if(uploaderClass.auto_update != "on") 
+      throw new Error("error setting notify, extected 'off' actual  "+uploaderClass.auto_update);
+    let params = uploaderClass.get_common_params().join(" ");
+    if(params.indexOf('auto-update') == -1)
+      throw new Error("auto-update param not added to get_common_params");
+
+    done();
+  })
+
+  // video params tests
+  it("should set the video param to 'off' with android platform", (done) => {
+     // create tmp.apk
+    fs.closeSync(fs.openSync('./tests/dummy.apk','w+'))
+
+    let uploader = new TestFairyUploader({
+      platform:"android", 
+      api_key:"xxxxx", 
+      file: "./tests/dummy.apk",
+      video: "off"
+    });
+    let uploaderClass = uploader.uploader;
+    if(uploaderClass.video != "off") 
+      throw new Error("error setting notify, extected 'off' actual "+uploaderClass.video);
+    let params = uploaderClass.get_common_params().join(" ");
+    if(params.indexOf('video') == -1)
+      throw new Error("video param not added to get_common_params");
+
+    done();
+  })
+
+  it("should set the video param to 'on' with android platform", (done) => {
+     // create tmp.apk
+    fs.closeSync(fs.openSync('./tests/dummy.apk','w+'))
+
+    let uploader = new TestFairyUploader({
+      platform:"android", 
+      api_key:"xxxxx", 
+      file: "./tests/dummy.apk",
+      video: "on"
+    });
+    let uploaderClass = uploader.uploader;
+    if(uploaderClass.video != "on") 
+      throw new Error("error setting notify, extected 'off' actual  "+uploaderClass.video);
+    let params = uploaderClass.get_common_params().join(" ");
+    if(params.indexOf('video') == -1)
+      throw new Error("video param not added to get_common_params");
+
+    done();
+  })
+
+  it("should set the video param to 'wifi' with android platform", (done) => {
+     // create tmp.apk
+    fs.closeSync(fs.openSync('./tests/dummy.apk','w+'))
+
+    let uploader = new TestFairyUploader({
+      platform:"android", 
+      api_key:"xxxxx", 
+      file: "./tests/dummy.apk",
+      video: "wifi"
+    });
+    let uploaderClass = uploader.uploader;
+    if(uploaderClass.video != "wifi") 
+      throw new Error("error setting notify, extected 'off' actual  "+uploaderClass.video);
+    let params = uploaderClass.get_common_params().join(" ");
+    if(params.indexOf('video') == -1)
+      throw new Error("video param not added to get_common_params");
+
+    done();
+  })
+
+  it("should set the video param to 'off' with ios platform", (done) => {
+     // create tmp.apk
+    fs.closeSync(fs.openSync('./tests/dummy.ipa','w+'))
+
+    let uploader = new TestFairyUploader({
+      platform:"android", 
+      api_key:"xxxxx", 
+      file: "./tests/dummy.ipa",
+      video: "off"
+    });
+    let uploaderClass = uploader.uploader;
+    if(uploaderClass.video != "off") 
+      throw new Error("error setting notify, extected 'off' actual "+uploaderClass.video);
+    let params = uploaderClass.get_common_params().join(" ");
+    if(params.indexOf('video') == -1)
+      throw new Error("video param not added to get_common_params");
+
+    done();
+  })
+
+  it("should set the video param to 'on' with ios platform", (done) => {
+     // create tmp.apk
+    fs.closeSync(fs.openSync('./tests/dummy.ipa','w+'))
+
+    let uploader = new TestFairyUploader({
+      platform:"android", 
+      api_key:"xxxxx", 
+      file: "./tests/dummy.ipa",
+      video: "on"
+    });
+    let uploaderClass = uploader.uploader;
+    if(uploaderClass.video != "on") 
+      throw new Error("error setting notify, extected 'off' actual  "+uploaderClass.video);
+    let params = uploaderClass.get_common_params().join(" ");
+    if(params.indexOf('video') == -1)
+      throw new Error("video param not added to get_common_params");
+
+    done();
+  })
+
+  it("should set the video param to 'wifi' with ios platform", (done) => {
+     // create tmp.apk
+    fs.closeSync(fs.openSync('./tests/dummy.ipa','w+'))
+
+    let uploader = new TestFairyUploader({
+      platform:"android", 
+      api_key:"xxxxx", 
+      file: "./tests/dummy.ipa",
+      video: "wifi"
+    });
+    let uploaderClass = uploader.uploader;
+    if(uploaderClass.video != "wifi") 
+      throw new Error("error setting notify, extected 'off' actual  "+uploaderClass.video);
+    let params = uploaderClass.get_common_params().join(" ");
+    if(params.indexOf('video') == -1)
+      throw new Error("video param not added to get_common_params");
+
+    done();
+  })
+
+  // max_duration param tests 
+  it("should set the max_duration default param to '10m' with android platform", (done) => {
+     // create tmp.apk
+    fs.closeSync(fs.openSync('./tests/dummy.apk','w+'))
+
+    let uploader = new TestFairyUploader({
+      platform:"android", 
+      api_key:"xxxxx", 
+      file: "./tests/dummy.apk"
+    });
+    let uploaderClass = uploader.uploader;
+    if(uploaderClass.max_duration != "10m") 
+      throw new Error("error setting max_duration default value, actual "+uploaderClass.max_duration);
+    let params = uploaderClass.get_common_params().join(" ");
+    if(params.indexOf('max-duration') == -1)
+      throw new Error("max-duration param not added to get_common_params");
+
+    done();
+  })
+
+  it("should set the max_duration default param to '10m' with ios platform", (done) => {
+     // create tmp.apk
+    fs.closeSync(fs.openSync('./tests/dummy.ipa','w+'))
+
+    let uploader = new TestFairyUploader({
+      platform:"ios", 
+      api_key:"xxxxx", 
+      file: "./tests/dummy.ipa"
+    });
+    let uploaderClass = uploader.uploader;
+    if(uploaderClass.max_duration != "10m") 
+      throw new Error("error setting max_duration default value, actual "+uploaderClass.max_duration);
+    let params = uploaderClass.get_common_params().join(" ");
+    if(params.indexOf('max-duration') == -1)
+      throw new Error("max-duration param not added to get_common_params");
+
+    done();
+  })
+
+  it("should set the max_duration param with android platform", (done) => {
+     // create tmp.apk
+    fs.closeSync(fs.openSync('./tests/dummy.apk','w+'))
+
+    let uploader = new TestFairyUploader({
+      platform:"android", 
+      api_key:"xxxxx", 
+      file: "./tests/dummy.apk",
+      max_duration : "15m"
+    });
+    let uploaderClass = uploader.uploader;
+    if(uploaderClass.max_duration != "15m") 
+      throw new Error("error setting max_duration default value, actual "+uploaderClass.max_duration);
+    let params = uploaderClass.get_common_params().join(" ");
+    if(params.indexOf('max-duration') == -1)
+      throw new Error("max-duration param not added to get_common_params");
+
+    done();
+  })
+
+  it("should set the max_duration param with ios platform", (done) => {
+     // create tmp.apk
+    fs.closeSync(fs.openSync('./tests/dummy.ipa','w+'))
+
+    let uploader = new TestFairyUploader({
+      platform:"ios", 
+      api_key:"xxxxx", 
+      file: "./tests/dummy.ipa",
+      max_duration : "15m"
+    });
+    let uploaderClass = uploader.uploader;
+    if(uploaderClass.max_duration != "15m") 
+      throw new Error("error setting max_duration default value, actual "+uploaderClass.max_duration);
+    let params = uploaderClass.get_common_params().join(" ");
+    if(params.indexOf('max-duration') == -1)
+      throw new Error("max-duration param not added to get_common_params");
+
+    done();
+  })
+
+  // icon_watermark param tests
+  it("should set the icon_watermark to 'off' param with android platform", (done) => {
+     // create tmp.apk
+    fs.closeSync(fs.openSync('./tests/dummy.apk','w+'))
+
+    let uploader = new TestFairyUploader({
+      platform:"android", 
+      api_key:"xxxxx", 
+      file: "./tests/dummy.apk",
+      icon_watermark : "off"
+    });
+    let uploaderClass = uploader.uploader;
+    if(uploaderClass.icon_watermark != "off") 
+      throw new Error("error setting max_duration default value, actual "+uploaderClass.icon_watermark);
+    let params = uploaderClass.get_common_params().join(" ");
+    if(params.indexOf('icon-watermark') == -1)
+      throw new Error("icon-watermark param not added to get_common_params");
+
+    done();
+  })
+
+  it("should set the icon_watermark to 'off' param with ios platform", (done) => {
+     // create tmp.apk
+    fs.closeSync(fs.openSync('./tests/dummy.ipa','w+'))
+
+    let uploader = new TestFairyUploader({
+      platform:"ios", 
+      api_key:"xxxxx", 
+      file: "./tests/dummy.ipa",
+      icon_watermark : "off"
+    });
+    let uploaderClass = uploader.uploader;
+    if(uploaderClass.icon_watermark != "off") 
+      throw new Error("error setting max_duration default value, actual "+uploaderClass.icon_watermark);
+    let params = uploaderClass.get_common_params().join(" ");
+    if(params.indexOf('icon-watermark') == -1)
+      throw new Error("icon-watermark param not added to get_common_params");
+
+    done();
+  })
+
+  it("should set the icon_watermark to 'on' param with android platform", (done) => {
+     // create tmp.apk
+    fs.closeSync(fs.openSync('./tests/dummy.apk','w+'))
+
+    let uploader = new TestFairyUploader({
+      platform:"android", 
+      api_key:"xxxxx", 
+      file: "./tests/dummy.apk",
+      icon_watermark : "on"
+    });
+    let uploaderClass = uploader.uploader;
+    if(uploaderClass.icon_watermark != "on") 
+      throw new Error("error setting max_duration default value, actual "+uploaderClass.icon_watermark);
+    let params = uploaderClass.get_common_params().join(" ");
+    if(params.indexOf('icon-watermark') == -1)
+      throw new Error("icon-watermark param not added to get_common_params");
+
+    done();
+  })
+
+  it("should set the icon_watermark to 'on' param with ios platform", (done) => {
+     // create tmp.apk
+    fs.closeSync(fs.openSync('./tests/dummy.ipa','w+'))
+
+    let uploader = new TestFairyUploader({
+      platform:"ios", 
+      api_key:"xxxxx", 
+      file: "./tests/dummy.ipa",
+      icon_watermark : "on"
+    });
+    let uploaderClass = uploader.uploader;
+    if(uploaderClass.icon_watermark != "on") 
+      throw new Error("error setting max_duration default value, actual "+uploaderClass.icon_watermark);
+    let params = uploaderClass.get_common_params().join(" ");
+    if(params.indexOf('icon-watermark') == -1)
+      throw new Error("icon-watermark param not added to get_common_params");
+
+    done();
+  })
+
   it("should return a destructured array on upload with android platform", (done) => {
     // create tmp.apk
     fs.closeSync(fs.openSync('./tests/dummy.apk','w+'))
