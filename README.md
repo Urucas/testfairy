@@ -1,4 +1,4 @@
-# testfairy
+# testfairy [![Build Status](https://travis-ci.org/Urucas/testfairy.svg)](https://travis-ci.org/Urucas/testfairy)
 testfairy upload cli-tool
 
 #Install 
