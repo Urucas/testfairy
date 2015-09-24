@@ -5,9 +5,9 @@ module.exports = function(grunt) {
       options: { sourceMap: false },
       dist: {
         files: [{
-          cwd: './',
-          src: ['*.es6.js'],
-          dest: './',
+          cwd: './lib',
+          src: ['*.js'],
+          dest: './dist',
           ext: '.js',
           expand: true
         }]
