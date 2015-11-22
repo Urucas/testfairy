@@ -31,6 +31,7 @@ let [err, response] = uploader.run();
 * ```platform```: [ "android" | "ios" ]
 * ```api_key```: "your_api_key"
 * ```file```: "relative_path_to_your_apk_or_ipa"
+* ```grpups```: "group_you_want_to_notify" 
 * ```notify```: ["on" | "off"] 
 * ```max_duration```: "time" 
 * ```video``` : [ "on" | "off" | "wifi" ]
