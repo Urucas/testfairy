@@ -1,6 +1,6 @@
 {
   "name": "testfairy",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "testfairy upload cli-tool",
   "main": "./dist/TestFairyUplader.js",
   "scripts": {
