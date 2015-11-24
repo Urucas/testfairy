@@ -44,3 +44,7 @@ let [err, response] = uploader.run();
 
 #Requirements
 * IPA file must be signed
+ 
+
+#Related
+[grunt-testfairy](https://github.com/Urucas/grunt-testfairy)
